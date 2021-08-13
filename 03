@@ -1,0 +1,13 @@
+//宏定义
+#define m(a,b) a>=b?printf("%d",a):printf("%d",b) //有点类似函数
+int main()
+{
+	int b = 0;
+	int a = 0;
+	int c = 0;
+	int d = 0;
+	scanf("%d%d", &c, &d);
+	int h = m(c, d);
+	return 0;
+}
+//上述代码表达结果其实和00、02类似

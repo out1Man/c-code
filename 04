@@ -17,15 +17,3 @@ int main()
 }
 
 
-#include <stdio.h>
-int main()
-{
-	int a = 10;
-	int* b =&a;//int*表示类型 b称作指针变量 用来存放a在内存中的地址
-	printf("%p\n", &a);
-	printf("%p\n", b);
-	printf("%p", &b);//运行结果表明 b重新申请了一个位置 但其值用来存放a的地址
-	printf("%d", *b);//*b 解引用操作符 通过a在b中存放的地址找到a的值 可理解为*b就是a
-	return 0;
-}
-指针在32位平台上的大小为32/8=4个字节 在64位平台上的大小为64/8=8个字节

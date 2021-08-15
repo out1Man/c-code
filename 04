@@ -1,0 +1,31 @@
+#初识指针与结构体
+struct book //创建结构体用于描述复杂对象  创建方式有点类似函数 
+{
+	char name[5];
+	int price;
+};
+#include <stdio.h>
+int main()
+{
+	struct book a1 = { "简爱",55 };
+	printf("书名为：%s\n", a1.name);
+	printf("价格为：%d\n", a1.price);
+	struct book* b = &a1;
+	printf("价格为：%d\n", (*b).price);//跟上面的表达方式是一致的
+	printf("书名为：%s", b->name);//指针用于结构体的操作 下面方式可能更简洁点
+	return 0;
+}
+
+
+#include <stdio.h>
+int main()
+{
+	int a = 10;
+	int* b =&a;//int*表示类型 b称作指针变量 用来存放a在内存中的地址
+	printf("%p\n", &a);
+	printf("%p\n", b);
+	printf("%p", &b);//运行结果表明 b重新申请了一个位置 但其值用来存放a的地址
+	printf("%d", *b);//*b 解引用操作符 通过a在b中存放的地址找到a的值 可理解为*b就是a
+	return 0;
+}
+指针在32位平台上的大小为32/8=4个字节 在64位平台上的大小为64/8=8个字节

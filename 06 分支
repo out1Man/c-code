@@ -14,3 +14,19 @@ int main()
 		printf("老年");
 	return 0;
 }
+
+
+#include <stdio.h>
+int main()
+{
+	int a = 0;
+	int b = 1;
+	if (a == 1)
+	{
+		if (b == 2)  //运行结果为无，原因是else并没有与第一个if匹配 而是与最近的if匹配
+			printf("haha");
+	}     //解决方法即为加一个大括号
+	else
+		printf("hehe");
+	return 0; 
+}             

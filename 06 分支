@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+	int age = 10;
+	/*if (20 <= age < 30)//代码运行后显然不符合常理 原因是20<=age运行结果为0 0<30 为真
+		printf("青年");*/ //正确表达方式如下
+	if (age < 18)
+		printf("未成年");
+	else if (age >= 18 && age <= 30)
+		printf("青年");
+	else if (age > 30 && age <= 50)
+		printf("中年");
+	else
+		printf("老年");
+	return 0;
+}

@@ -1,0 +1,70 @@
+#include <stdio.h>
+int main()
+{
+	int a = 0;
+	do
+	{
+		if (a == 5)
+			break;
+		printf("%d", a);
+		a++;
+	} 
+	while (a < 10);
+		return 0;
+}
+
+
+
+#include <stdio.h>
+int main()
+{
+	int a = 0;
+	for(a=0; a<10; a+=2) //for后面表示 初始化条件 判断语句 调整条件
+	{
+		if (a == 5)
+			continue;
+		printf("%d",a);
+	}
+	return 0;
+}
+
+
+
+
+
+
+#include <stdio.h>
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	switch (a)
+	{
+	case 1:
+		printf("星期一");
+		break;
+	case 2:
+		printf("星期二");
+		break;
+	case 5:
+		printf("星期五");
+		break;
+    }
+	return 0;
+}
+
+
+
+
+#include <stdio.h>
+int main()
+{
+	int a = 0;
+	while (a <= 100)
+	{
+		if (a % 2 == 1)
+			printf("%d\t",a);
+		a++;
+	}
+	return 0;
+}

@@ -30,3 +30,29 @@ int main()
 		printf("hehe");
 	return 0; 
 }             
+
+
+
+
+#include <stdio.h>
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	switch (a) //switch可以嵌套使用 （这里没有嵌套）
+	{
+	case 1:	 //没有break就会继续往下执行
+	case 2:
+	case 5:
+		printf("工作日");
+		break;
+	case 6:
+	case 7:
+		printf("休息日");
+		break;
+	default:     //如果输入的数字没有进入上面 则执行default
+		printf("输入错误");  //default语句与case语句可颠倒
+		break; //严谨的话 每句末尾都加上break
+	}
+	return 0;
+}

@@ -20,3 +20,25 @@ int main()
 	}
 	return 0;
 }
+
+
+//用函数判断闰年
+#include <stdio.h>
+
+hahaa(int x)
+{
+	if ((x%4==0&&x%100!=0)||x%400==0)
+		return 1;
+	else
+		return 0;
+}
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	if (hahaa(a) == 1)
+		printf("是");
+	else
+		printf("不是");
+	return 0;
+}

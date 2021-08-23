@@ -42,3 +42,42 @@ int main()
 		printf("不是");
 	return 0;
 }
+
+
+//用函数 二分法查找有序数组的元素
+#include <stdio.h>
+
+int site(int x[], int y,int h)
+{
+	int left = 0;
+	int right = h - 1;
+	
+	while (left<=right)
+	{
+		int mid = (left + right) / 2;
+		if (x[mid] < y)
+		{
+			left = mid + 1;
+		}
+		else if (x[mid] > y)
+		{
+			right = mid - 1;
+		}
+		else
+			return mid;
+	}
+	return -1;
+}
+int main()
+{
+	int arr[] = {5,6,7,8,9,10,11,12,13 };
+	int a = 10;
+	int c = 0;
+	int h = sizeof(arr)/sizeof(arr[0]);
+	c = site(arr,a,h);
+	if (c == -1)
+		printf("找不到");
+	else
+		printf("对应位置下标为：%d", c);
+	return 0;
+}

@@ -1,0 +1,22 @@
+//用函数法打印100到200之间的素数
+#include <stdio.h>
+ hello(int x)
+{
+	int b = 0;
+	for (b = 2; b < x; b++)
+	{
+		if (x % b == 0)
+			return 0;
+	}
+	return 1;
+}
+int main()
+{
+	int a = 0;
+	for (a = 100; a <= 200; a++)
+	{
+		if (hello(a) == 1)
+			printf("%d\n", a);
+	}
+	return 0;
+}

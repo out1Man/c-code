@@ -1,0 +1,86 @@
+//求n的阶乘
+#include <stdio.h>
+int c(int n)
+{
+	if (n == 1)
+		return 1;
+	else
+		return n * c(n - 1);
+}
+int main()
+{
+	int a = 0;
+	scanf("%d",&a);
+	printf("阶乘为：%d", c(a));
+	return 0;
+}
+
+
+//求斐波那契数列
+#include <stdio.h>
+int c(int n)
+{
+	if (n == 1 || n == 2)
+		return 1;
+	else
+		return c(n - 1) + c(n - 2);
+}
+
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	printf("斐波那契数为：%d", c(a));
+	return 0;
+}
+
+
+//优化斐波那契数列
+#include <stdio.h>
+int c(int n)
+{
+	int d = 1;
+	int e = 1;
+	int f = 1;
+	while (n>2)
+	{
+		f = d + e;
+		d = e;
+		e = f;
+		n--;
+	}
+	return f;
+}
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	printf("斐波那契数为：%d", c(a));
+	return 0;
+}
+
+
+
+//优化斐波那契数列
+#include <stdio.h>
+int c(int n)
+{
+	int d = 1;
+	int e = 1;
+	int f = 1;
+	while (n>2)
+	{
+		f = d + e;
+		d = e;
+		e = f;
+		n--;
+	}
+	return f;
+}
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	printf("斐波那契数为：%d", c(a));
+	return 0;
+}

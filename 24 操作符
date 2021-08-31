@@ -1,0 +1,11 @@
+//操作符
+#include <stdio.h>
+int main()
+{
+	int a = 5;
+	int b = 3;
+	int c = a & b;//按二进制位与
+	printf("%d\n", c); //1个为0则为0，全为1才为1
+	printf("%d", a | b);//按位或 一个为1则为1
+	printf("%d", a ^ b);//按位异或 相同为0 不同为1
+}

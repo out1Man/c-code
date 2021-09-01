@@ -33,3 +33,22 @@ int main()
 	printf("%d", count);
 	return 0;
 }
+
+
+//更优化 
+#include <stdio.h>
+int main()
+{
+	int a = 0;
+	int count = 0;
+	scanf("%d", &a);
+	while (a)
+	{
+		a = a & (a - 1);//原理  a&（a-1）的结果为a的值最右端的1变为0
+		count++;
+	}
+	printf("%d", count);
+	return 0;
+}
+
+

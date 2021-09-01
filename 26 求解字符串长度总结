@@ -38,7 +38,24 @@ int main()
 	printf("%d", b);
 	return 0;
 }
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Sec
+
+//指针求解字符串长度、
+#include <stdio.h>
+int mystr(char* a)
+{
+	char* start = a;
+	char* end = a;
+	while (*end != '\0')
+	{
+		end++;
+	}
+	return end - start;//同一数组指针相减等于其中元素的个数
+}
+int main()
+{
+	char arr[] = "bit";
+	int b=mystr(arr);
+	printf("%d", b);
+	return 0;
+}
+

@@ -30,3 +30,28 @@ int main()
 	}
 	return 0;
 }
+
+
+
+//升级版九九乘法表
+#include <stdio.h>
+void jiujiu(int a)
+{
+	int i = 0;
+	int j = 0;
+	for (i = 1; i <= a; i++)
+	{
+		for (j = 1; j <= i; j++)
+		{
+			printf("%d*%d=%2d  ", i, j, i * j);
+		}
+		printf("\n");
+	}
+}
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	jiujiu(a);
+	return 0;
+}

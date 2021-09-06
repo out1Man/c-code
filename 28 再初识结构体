@@ -1,0 +1,37 @@
+////初级结构体
+//结构体初始化
+#include <stdio.h>
+struct student
+{
+	char name[20];
+	int age;
+	char telephone;
+	char sex[5];
+};//结构体可理解为一个类型
+int main()
+{
+	struct student s1 = { "out Man",18,13313866666,"男"};//结构体初始化
+	//stuct student s2......
+	return 0;
+}
+
+//结构体传参 
+#include <stdio.h>
+typedef struct student
+{
+	char name[20];
+	int age;
+	char tele[20];
+}stu;
+void print(stu* s)
+{
+	print(s->age);
+	print(s->name);
+}
+//最好使用传址调用 即采用指针 减少占用空间 
+int main()
+{
+	stu s = { "陈明旭",19,"13313866666" };
+	print(&s);
+	return 0;
+}

@@ -39,3 +39,50 @@ int main()
 	printf("%s", arr1);
 	return 0;
 }
+
+
+
+//二层优化strcpy函数
+#include <stdio.h>
+#include <assert.h>
+void my_strcpy(char* des, char* sou)
+{
+	assert(*des != NULL);//加入断言原因是 输入空指针时可以及时报错 不输入空指针正常运行
+	assert(*sou != NULL);
+	while (*des++ = *sou++)//利用后置加加 以及 \0 为假
+	{
+		;
+	}
+
+}
+int main()
+{
+	char arr1[] = { "********" };
+	char arr2[] = { "hello" };
+	my_strcpy(arr1, arr2);
+	printf("%s", arr1);
+	return 0;
+}
+
+
+//三层优化strcpy函数
+#include <stdio.h>
+#include <assert.h>
+char* my_strcpy(char* des,const char* sou)//加入const修饰 防止函数内部sou被改变 能及时报错 比如*des++=*sou++
+{
+	char* ret = des;
+	assert(*des != NULL);//加入断言原因是 输入空指针时可以及时报错 不输入空指针正常运行
+	assert(*sou != NULL);//同时保证指针的有效性
+	while (*des++ = *sou++)//利用后置加加 以及 \0 为假
+	{
+		;
+	}
+	return ret;
+}
+int main()
+{
+	char arr1[] = { "********" };
+	char arr2[] = { "hello" };
+	printf("%s", my_strcpy(arr1, arr2));
+	return 0;
+}

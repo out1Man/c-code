@@ -9,7 +9,6 @@ void change(int arr[],int sz)
 		int y = 0;
 		for (y = 0; y < sz - x - 1; y++)
 		{
-			int flag = 1;
 			if (arr[y] > arr[y + 1])
 			{
 				int tem = arr[y];
@@ -17,8 +16,6 @@ void change(int arr[],int sz)
 				arr[y + 1] = tem;
 				flag = 0;
 			}
-			if (flag == 1)
-				break;
 		}
 	}
 }

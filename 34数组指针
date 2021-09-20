@@ -1,0 +1,42 @@
+//数组指针
+#include <stdio.h>
+int main()
+{
+	char arr1[]= "abcd";
+	char arr2[] = "abcd";
+	if (arr1 == arr2)
+		printf("相同\n");    // arr1:abcd  arr1和arr2分别创立两个空间
+	else                     // arr2:abcd
+		printf("不同\n");    // p1>-      abcde (p1和p2指向同一个地址)
+	char* p1 = "abcde";      // p2>-
+	char* p2 = "abcde";
+	if (p1==p2)
+		printf("相同");
+	else
+		printf("不同");
+	return 0;
+}
+
+#include <stdio.h>
+void print1(int(*p)[5], int x, int y) //数组指针一般用于二维数组 但二维数组传参当成一维数组来理解
+{
+	int i, j;
+	for (i = 0; i < x; i++)
+	{
+		
+		for (j = 0; j < y; j++)
+		{
+			printf("%d ", p[i][j]);
+			printf("%d ", (*(p + i))[j]);
+			printf("%d ", *(*(p + i) + j)); //三者表示结果一样 真牛
+		}
+		printf("\n");
+	}
+	
+}
+int main()
+{
+	int arr[3][5] = { {1,2,3,4,5,},{2,3,4,5,6},{3,4,5,6,7} };
+	print1(arr, 3, 5);
+	return 0;
+}

@@ -1,4 +1,4 @@
-
+#include <time.h>
 #include <stdio.h>
 #define ROW1 9
 #define COL1 9

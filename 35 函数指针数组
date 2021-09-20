@@ -1,0 +1,113 @@
+//函数指针数组应用举例
+#include <stdio.h>
+void menu()
+{
+	printf("----1 add------\n");
+	printf("----2 sub------\n");
+	printf("----3 mul------\n");
+	printf("----0 exit-----\n");
+}
+void add(int x, int y)
+{
+	printf("%d\n", x + y);
+}
+void sub(int x, int y)
+{
+	printf("%d\n", x - y);
+}
+void mul(int x, int y)
+{
+	printf("%d\n", x * y);
+}
+
+int main()
+{
+	int a = 0;
+	int x, y = 0;
+	int flag = 1;
+	while (1&&flag)
+	{
+		menu();
+		printf("请选择\n");
+		scanf("%d", &a);
+		
+		switch (a)
+		{
+		case 1:
+			printf("请输入两个操作数\n");
+			scanf("%d%d", &x, &y);
+			add(x, y);
+			break;
+		case 2:
+			printf("请输入两个操作数\n");
+			scanf("%d%d", &x, &y);
+			sub(x, y);
+			break;
+		case 3:
+			printf("请输入两个操作数\n");
+			scanf("%d%d", &x, &y);
+			mul(x, y);
+			break;
+		case 0:
+			flag = 0;
+			break;
+		default:
+			printf("请重新输入\n");
+			break;
+		}
+
+	}
+	return 0;
+}
+
+
+
+#include <stdio.h>
+void menu()
+{
+	printf("----1 add------\n");
+	printf("----2 sub------\n");
+	printf("----3 mul------\n");
+	printf("----0 exit-----\n");
+}
+void add(int x, int y)
+{
+	printf("%d\n", x + y);
+}
+void sub(int x, int y)
+{
+	printf("%d\n", x - y);
+}
+void mul(int x, int y)
+{
+	printf("%d\n", x * y);
+}
+
+int main()
+{
+	int a = 0;
+	int x = 0;
+	int y = 0;
+	int flag = 1;
+	void (*p[4])(int, int) = { 0,add,sub,mul };
+	while (1 )
+	{
+		menu();
+		printf("请选择\n");
+		scanf("%d", &a);
+		if (a == 0)
+		{
+			break;
+		}
+		else if (a > 0 && a < 5)
+		{
+			printf("请输入两个操作数\n");
+			scanf("%d%d", &x, &y);
+			p[a](x, y);
+		}
+		else
+			printf("请重新输入\n");
+
+	}
+	return 0;
+}
